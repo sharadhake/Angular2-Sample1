@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h6>F1 world champions list for season {{fromSeason}} to {{toSeason}}</h6>
+
+    <table class="table table-bordered border-primary">
+        <thead>
+          <tr class="table-info text-center">
+            <th scope="col">Season</th>
+            <th scope="col">Driver Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Nationality</th>
+            <th scope="col">Constructors</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let champion of championsList" class="text-center">
+                <td scope="col"><a class="link" routerLink="/season/{{ champion.season }}/{{ champion.driverId }}">{{ champion.season }}</a></td>
+                <td scope="col">{{ champion.name }}</td>
+                <td scope="col">{{ champion.dob }}</td>
+                <td scope="col">{{ champion.nationality }}</td>
+                <td scope="col">{{ champion.constructorName }}</td>
+                <td scope="col"> {{ champion.points }}</td>
+            </tr>    
+        </tbody>
+    </table>
+</div>

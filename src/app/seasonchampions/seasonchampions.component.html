@@ -1,0 +1,26 @@
+<div class="container">
+    <h6 class="my-4">Season {{year}} champions list <a class="btn btn-secondary btn-sm float-right text-white" (click)="goBack()">Go Back</a></h6>
+
+    <table class="table table-bordered border-primary text-center">
+        <thead>
+          <tr class="table-info">
+            <th scope="col">Race Name</th>
+            <th scope="col">Driver Name</th>
+            <th scope="col">Race Date</th>
+            <th scope="col">Nationality</th>
+            <th scope="col">Constructors</th>
+            <th scope="col">Laps</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let champion of championsList" class="text-center" [ngClass]="{'bg-info': champion.isChampion}">
+                <td scope="col">{{ champion.season }}</td>
+                <td scope="col">{{ champion.name }}</td>
+                <td scope="col">{{ champion.raceDate }}</td>
+                <td scope="col">{{ champion.nationality }}</td>
+                <td scope="col">{{ champion.constructorName }}</td>
+                <td scope="col"> {{ champion.laps }}</td>
+            </tr>    
+        </tbody>
+    </table>
+</div>  
